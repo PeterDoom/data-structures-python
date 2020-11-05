@@ -1,4 +1,4 @@
-class Node: 
+class Node:
     def __init__(self, value=None):
         self.value = value
         self.next_value = None
@@ -10,13 +10,12 @@ class LinkedList:
 
     def print_list(self):
         print_value = self.head_value
-        while print_value is not None: 
+        while print_value is not None:
             print(print_value.value)
             print_value = print_value.next_value
 
 
-
-#TODO Add insertion to Linked list
+# TODO Add insertion to Linked list
 
 
 linked_list = LinkedList()
