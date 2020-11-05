@@ -14,16 +14,28 @@ class LinkedList:
             print(print_value.value)
             print_value = print_value.next_value
 
+    def reverse_list(self):
+        prev = None
+        current = None
+        while current is not None:
+            next = current.next_value
+            current.next_value = prev
+            prev = current
+            current = next
+        self.head_value = prev
 
-# TODO Add insertion to Linked list
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head_value
+        self.head_value = new_node
 
 
-linked_list = LinkedList()
-node_1 = Node("Monday")
-node_2 = Node("Tuesday")
-node_3 = Node("Wednesday")
-linked_list.head_value = node_1
-linked_list.head_value.next_value = node_2
-node_2.next_value = node_3
+llist = LinkedList()
+llist.push(20)
+llist.push(4)
+llist.push(15)
+llist.push(85)
 
-linked_list.print_list()
+llist.reverse_list()
+
+llist.print_list()
